@@ -7,3 +7,11 @@ export const HomeContainer = styled.main`
   align-items: center;
   justify-content: center;
 `
+
+export const HomeContent = styled.div`
+
+`
+
+export const ListProducts = styled.div`
+
+`

@@ -15,7 +15,7 @@ export const GlobalStyle = createGlobalStyle`
     color: ${(props) => props.theme['gray-300']};
     -webkit-font-smoothing: antialiased;
   }
-  body, input, textarea, button, h1 {
+  body, input, textarea, button {
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
     font-size: 1rem;
