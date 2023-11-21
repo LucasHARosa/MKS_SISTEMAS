@@ -7,13 +7,16 @@ import { CartProductProps, ListProductsProps, ProductProps } from "../../dto/Pro
 import { HomeContainer, HomeContent, ListProducts } from "./styles";
 import { useQuery } from "react-query";
 import { Checkout } from "../../components/Checkout";
+import { Skeleton } from "@mui/material";
+
 
 
 export function Home() {
 
   const [cart, setCart] = useState<Array<CartProductProps>>(Array(0));
   const [isCheckoutOpen, setCheckoutOpen] = useState(false);
-
+  const skeleton = Array(10).fill(0);
+  // const a = true;
   const query = {
     page: 1,
     rows: 10,
@@ -84,8 +87,16 @@ export function Home() {
         onClick={handleCheckoutToggle} 
       />
       <HomeContent>
-        {isLoading ? (
-          <h1></h1>
+        { isLoading ? (
+          <ListProducts>
+            {skeleton.map((item, index) => {
+              return (
+                <div key={index}>
+                  <Skeleton variant="rectangular" height={285} width={217.56172}  />
+                </div>
+              );
+            })}
+          </ListProducts>
         ):(
           <ListProducts>
             {data && (

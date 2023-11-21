@@ -1,11 +1,7 @@
 import styled from 'styled-components'
 
 export const FooterContainer = styled.footer`
-  position: relative;
-  bottom: 0;
-  left: 0;
 
-  
   background-color: ${(props)=>props.theme['gray-100']} ;
   height: 2.125rem;
   width: 100%;
