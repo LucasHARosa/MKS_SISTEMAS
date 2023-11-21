@@ -1,6 +1,7 @@
 import { ProductProps } from "../../dto/ProductDTO";
 import { CardProductButton, CardProductContainer, CardProductDescription, CardProductImage, CardProductInfo, CardProductPrice, CardProductPriceContainer } from "./styles";
 import shoppingbag from "../../assets/shoppingbag.svg";
+import { motion } from "framer-motion";
 
 interface CardProductProps {
   product: ProductProps;
@@ -8,8 +9,14 @@ interface CardProductProps {
 }
 
 export function CardProduct({ product, onAddCart }: CardProductProps) {
+  const price = Number(product.price).toLocaleString('pt-BR');
   return (
-    <CardProductContainer>
+    <CardProductContainer
+      initial={{ opacity: 0, scale: 0.5 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ type: "spring" }}
+      layout
+    >
       <CardProductImage>
           <img src={product.photo} alt={product.name} />
       </CardProductImage>
@@ -17,7 +24,7 @@ export function CardProduct({ product, onAddCart }: CardProductProps) {
         <CardProductPriceContainer>
           <h1>{product.name}</h1>
           <CardProductPrice>
-            <h2>R${product.price.split('.')[0]}</h2>
+            <h2>R${price}</h2>
           </CardProductPrice>
         </CardProductPriceContainer>
         <CardProductDescription>
@@ -25,9 +32,16 @@ export function CardProduct({ product, onAddCart }: CardProductProps) {
         </CardProductDescription>
       </CardProductInfo>
       <CardProductButton>
-        <button onClick={()=>onAddCart(product)}>
+        <button
+          onClick={()=>onAddCart(product)}
+        >
           <img src={shoppingbag} alt="shoppingbag" />
-          COMPRAR
+          <motion.h2
+            whileHover={{ scale: 1.05 }}
+            transition={{ duration: 0.2 }}
+          >
+            COMPRAR
+          </motion.h2>
         </button>
       </CardProductButton>
     </CardProductContainer>

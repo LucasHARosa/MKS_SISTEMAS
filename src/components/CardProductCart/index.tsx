@@ -11,8 +11,20 @@ interface CardProductCartProps {
 
 export function CardProductCart( {product, quantity, onRemoveCart, onDeleteCart, onAddCart}: CardProductCartProps){
   return(
-    <CardProductCartContainer>
-      <CloseButton onClick={() => onDeleteCart(product)}>X</CloseButton>
+    <CardProductCartContainer
+      exit={{ opacity: 0 }}
+      initial={{ opacity: 0, scale: 0.5 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ type: "spring" }}
+      layout
+    >
+      <CloseButton 
+        whileHover={{ scale: 1.2 }}
+        transition={{ type: "spring", stiffness: 400, damping: 10 }}
+        onClick={() => onDeleteCart(product)}
+      >
+        X
+      </CloseButton>
       <CardProductCartInfo>
         <img src={product.photo} alt={product.name} />
         <p>
@@ -30,7 +42,7 @@ export function CardProductCart( {product, quantity, onRemoveCart, onDeleteCart,
       </ProductQuantity>
       <Price>
         <h2>
-          R$ {(Number(product.price) * quantity )}
+          R$ {(Number(product.price) * quantity ).toLocaleString('pt-BR')}
         </h2>
       </Price>
       

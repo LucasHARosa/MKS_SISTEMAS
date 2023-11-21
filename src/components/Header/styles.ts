@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion'
 import styled from 'styled-components'
 
 export const HeaderContainer = styled.header`
@@ -43,7 +44,7 @@ export const HeaderLogo = styled.div`
     margin-bottom: 0.45rem;
   }
 `
-export const ButtonCart = styled.button`
+export const ButtonCart = styled(motion.button)`
   display: flex;
   flex-direction: row;
   align-items: center;

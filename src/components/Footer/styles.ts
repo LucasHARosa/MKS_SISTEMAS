@@ -8,7 +8,7 @@ export const FooterContainer = styled.footer`
   
   background-color: ${(props)=>props.theme['gray-100']} ;
   height: 2.125rem;
-  width: 100vw;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;

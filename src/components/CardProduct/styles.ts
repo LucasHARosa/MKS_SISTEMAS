@@ -1,6 +1,7 @@
+import { motion } from 'framer-motion'
 import styled from 'styled-components'
 
-export const CardProductContainer = styled.div`
+export const CardProductContainer = styled(motion.div)`
   width: 13.59763rem;
   height: 17.8125rem;
   border-radius: 0.5rem;
@@ -82,7 +83,7 @@ export const CardProductPrice = styled.div`
 
 `
 
-export const CardProductButton = styled.div`
+export const CardProductButton = styled(motion.div)`
   width: 100%;
   height: 1.99419rem;
   border-bottom-left-radius: 0.5rem;
@@ -100,10 +101,19 @@ export const CardProductButton = styled.div`
     align-items: center;
     justify-content: center;
     gap: 0.88rem;
-    font-size: 0.875rem;
-    color: ${(props)=>props.theme['white']} ;
-    font-family: 'Montserrat';
-    font-weight: 600;
+    transition: 0.2s;
+    &:hover{
+      background-color: ${(props)=>props.theme["blue-500"]};
+      transition: 0.2s;
+    }
+    h2{
+        
+        font-size: 0.875rem;
+        color: ${(props)=>props.theme['white']} ;
+        font-family: 'Montserrat';
+        font-weight: 600;
+    }
+
     
   }
 `

@@ -12,7 +12,7 @@ export const HomeContent = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 7.25rem 15.96rem;
+  padding: 7.25rem 15.94rem;
 
 `
 

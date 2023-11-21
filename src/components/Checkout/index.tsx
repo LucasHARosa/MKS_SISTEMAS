@@ -1,6 +1,7 @@
 import { CartProductProps, ProductProps } from "../../dto/ProductDTO";
-import { CheckoutContainer, CheckoutHeader, CheckoutProducts } from "./styles";
+import { CheckoutButton, CheckoutContainer, CheckoutHeader, CheckoutListProducts, CheckoutTotal } from "./styles";
 import { CardProductCart } from "../CardProductCart";
+import { motion } from "framer-motion";
 
 interface CheckoutProps {
   ListCart: Array<CartProductProps>;
@@ -23,28 +24,41 @@ export function Checkout( {ListCart, onRemoveCart, onDeleteCart, onAddCart, isOp
       animate={{ x: isOpen ? 0 : '100%' }}
       transition={{ type: 'spring', stiffness: 100 }}
     >
-      <CheckoutHeader>
-        <h1>Carrinho de compras</h1>
-        <button onClick={onClose}>
-          X
-        </button>
-        
-      </CheckoutHeader>
-      <CheckoutProducts>
-        {ListCart.map((item) => {
-          return (
-            <CardProductCart
-              key={item.product.id}
-              product={item.product}
-              quantity={item.quantity}
-              onRemoveCart={onRemoveCart}
-              onDeleteCart={onDeleteCart}
-              onAddCart={onAddCart}
-            />
-          );
-        })}
-      </CheckoutProducts>
-    
+      <div>
+        <CheckoutHeader>
+          <h1>Carrinho de compras</h1>
+          <motion.button 
+            whileHover={{ scale: 1.2 }}
+            transition={{ type: "spring", stiffness: 400, damping: 10 }}
+            onClick={onClose}
+          >
+            X
+          </motion.button>
+        </CheckoutHeader>
+        <CheckoutListProducts>
+          {ListCart.map((item) => {
+            return (
+              <CardProductCart
+                key={item.product.id}
+                product={item.product}
+                quantity={item.quantity}
+                onRemoveCart={onRemoveCart}
+                onDeleteCart={onDeleteCart}
+                onAddCart={onAddCart}
+              />
+            );
+          })}
+        </CheckoutListProducts>
+      </div>
+      <div>
+        <CheckoutTotal>
+          <h2>Total: </h2>
+          <h2>R${totalCart.toLocaleString('pt-BR')}</h2>
+        </CheckoutTotal>
+        <CheckoutButton>
+          Finalizar compra
+        </CheckoutButton>
+      </div>
   </CheckoutContainer>
   )
 }

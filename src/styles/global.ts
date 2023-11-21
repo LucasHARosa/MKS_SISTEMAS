@@ -6,10 +6,6 @@ export const GlobalStyle = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
   }
-  :focus {
-    outline: none;
-    box-shadow: 0 0 0 2px ${(props) => props.theme['green-500']};
-  }
   body {
     background: ${(props) => props.theme['gray-900']};
     color: ${(props) => props.theme['gray-300']};
@@ -27,4 +23,15 @@ export const GlobalStyle = createGlobalStyle`
     font-weight: 300;
     color: ${(props)=>props.theme['gray-800']} ;
   }
+  ::-webkit-scrollbar {
+    width: 0.5rem;
+  }
+  ::-webkit-scrollbar-track {
+    background-color: ${(props) => props.theme['gray-100']};
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: ${(props) => props.theme['gray-700']};
+    
+  }
+
 `

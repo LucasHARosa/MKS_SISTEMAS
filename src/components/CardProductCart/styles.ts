@@ -1,6 +1,7 @@
+import { motion } from 'framer-motion';
 import styled from 'styled-components'
 
-export const CardProductCartContainer = styled.div`
+export const CardProductCartContainer = styled(motion.div)`
   position: relative;
   width: 23.6875rem;
   height: 5.9375rem;
@@ -98,7 +99,7 @@ export const ProductQuantityButtons = styled.div`
   }
 `;
 
-export const Price = styled.div`
+export const Price = styled(motion.div)`
   width: 4.5rem;
   h2{
     font-family: Montserrat;
@@ -109,7 +110,7 @@ export const Price = styled.div`
   }
 `;
 
-export const CloseButton = styled.button`
+export const CloseButton = styled(motion.button)`
   position: absolute;
   top: -9px;
   right: -9px;
@@ -124,11 +125,7 @@ export const CloseButton = styled.button`
   font-size:  0.875rem;
   font-style: normal;
   font-weight: 400;
-  transition: 0.2s;
-  &:hover{
-    background-color: ${(props)=>props.theme['gray-800']} ;
-    transition: 0.2s;
-  }
+  
 `;
 
 
