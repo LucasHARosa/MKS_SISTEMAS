@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 export const HeaderContainer = styled.header`
   width: 100%;
-  height: 100px;
+  height: 6.3125rem;
   background-color: ${(props)=>props.theme['blue-300']} ;
   display: flex;
   flex-direction: row;
@@ -13,8 +13,9 @@ export const HeaderContainer = styled.header`
 
 
   
-  @media (max-width: 768px) {
-    padding: 20px 28px 20px 27px
+  @media (max-width: 425px) {
+    height: 3rem;
+    padding: 0.12rem 1.44rem 0.69rem 1.25rem;
   }
 `
 
@@ -32,6 +33,10 @@ export const HeaderLogo = styled.div`
     color: ${(props)=>props.theme['white']} ;
     font-family: 'Montserrat';
     font-weight: 600;
+
+    @media (max-width: 425px) {
+      font-size: 2rem;
+    }
     
 
   }
@@ -42,6 +47,10 @@ export const HeaderLogo = styled.div`
     font-family: 'Montserrat';
     font-weight: 300;
     margin-bottom: 0.45rem;
+    @media (max-width: 425px) {
+      font-size: 1rem;
+      margin-bottom: 0.25rem;
+    }
   }
 `
 export const ButtonCart = styled(motion.button)`
@@ -59,16 +68,29 @@ export const ButtonCart = styled(motion.button)`
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   cursor: pointer;
 
+  @media (max-width: 425px) {
+    width: 3.25rem;
+    height: 1.625rem;
+    padding:  0.5rem;
+  }
+
   img{
     width: 1.188rem;
     height: 1.125rem;
     flex-shrink: 0; 
+    @media (max-width: 425px) {
+      width: 0.65rem;
+      height: 0.65rem;
+    }
   }
   span{
     font-size: 1.25rem;
     color: ${(props)=>props.theme['black']} ;
     font-family: 'Montserrat';
     font-weight: 700;
+    @media (max-width: 425px) {
+      font-size: 0.75rem;
+    }
   }
   
 

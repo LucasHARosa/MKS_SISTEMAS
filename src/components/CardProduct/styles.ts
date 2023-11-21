@@ -11,6 +11,10 @@ export const CardProductContainer = styled(motion.div)`
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  @media (max-width: 425px) {
+    width: 15.65594rem;
+    height: 20.5rem;
+  }
 
 `
 
@@ -21,9 +25,14 @@ export const CardProductImage = styled.div`
   justify-content: center;
   padding-top: 1.12rem;
  
-
+  @media (max-width: 425px) {
+    padding-top: 1.29rem;
+  }
   img{
     height: 8.625rem;
+    @media (max-width: 425px) {
+      height: 9.92631rem;
+    }
   }
 
 `
@@ -34,14 +43,13 @@ export const CardProductInfo = styled.div`
   flex-direction: column;
   gap: 0.25rem;
   padding: 0 0.72rem 0 0.86rem;
-  
+  @media (max-width: 425px) {
+    gap: 0.58rem;
+    padding: 0 0.83rem 0 0.97rem;
+  }
 `
 
-export const CardProductDescription = styled.div`
- 
-  overflow: hidden;
-  text-overflow: ellipsis;
-`
+
 
 export const CardProductPriceContainer = styled.div`
   display: flex;
@@ -70,17 +78,26 @@ export const CardProductPrice = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @media (max-width: 425px) {
+    height: 1.875rem;
+  }
+  
   
   h2{
-    
     color: #FFF;
     font-family: Montserrat;
     font-size: 0.9375rem;
     font-style: normal;
     font-weight: 700;
-    
+
   }
 
+`
+
+export const CardProductDescription = styled.div`
+  overflow: hidden;
+  text-overflow: ellipsis;
 `
 
 export const CardProductButton = styled(motion.div)`
@@ -88,10 +105,15 @@ export const CardProductButton = styled(motion.div)`
   height: 1.99419rem;
   border-bottom-left-radius: 0.5rem;
   border-bottom-right-radius: 0.5rem;
+
+  @media (max-width: 425px) {
+    height: 2.295rem;
+  }
+
   
   button{
     width: 100%;
-    height: 1.99419rem;
+    height: 100%;
     background-color: ${(props)=>props.theme["blue-300"]};
     border: none;
     border-bottom-left-radius: 0.5rem;

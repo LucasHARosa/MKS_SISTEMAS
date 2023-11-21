@@ -32,9 +32,7 @@ export function CardProduct({ product, onAddCart }: CardProductProps) {
         </CardProductDescription>
       </CardProductInfo>
       <CardProductButton>
-        <button
-          onClick={()=>onAddCart(product)}
-        >
+        <button onClick={()=>onAddCart(product)}>
           <img src={shoppingbag} alt="shoppingbag" />
           <motion.h2
             whileHover={{ scale: 1.05 }}
