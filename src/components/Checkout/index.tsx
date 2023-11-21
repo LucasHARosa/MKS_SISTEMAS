@@ -3,6 +3,7 @@ import { CheckoutButton, CheckoutContainer, CheckoutHeader, CheckoutListProducts
 import { CardProductCart } from "../CardProductCart";
 import { motion } from "framer-motion";
 
+
 interface CheckoutProps {
   ListCart: Array<CartProductProps>;
   onRemoveCart: (product: ProductProps) => void;
@@ -17,6 +18,9 @@ export function Checkout( {ListCart, onRemoveCart, onDeleteCart, onAddCart, isOp
   const totalCart = ListCart.reduce((total, item) => {
     return total + (Number(item.product.price) * item.quantity);
   }, 0);
+
+ 
+
 
   return(
     <CheckoutContainer
@@ -35,20 +39,22 @@ export function Checkout( {ListCart, onRemoveCart, onDeleteCart, onAddCart, isOp
             X
           </motion.button>
         </CheckoutHeader>
-        <CheckoutListProducts>
-          {ListCart.map((item) => {
-            return (
-              <CardProductCart
-                key={item.product.id}
-                product={item.product}
-                quantity={item.quantity}
-                onRemoveCart={onRemoveCart}
-                onDeleteCart={onDeleteCart}
-                onAddCart={onAddCart}
-              />
-            );
-          })}
-        </CheckoutListProducts>
+        
+          <CheckoutListProducts>
+            {ListCart.map((item) => {
+              return (
+                <CardProductCart
+                  key={item.product.id}
+                  product={item.product}
+                  quantity={item.quantity}
+                  onRemoveCart={onRemoveCart}
+                  onDeleteCart={onDeleteCart}
+                  onAddCart={onAddCart}
+                />
+              );
+            })}
+          </CheckoutListProducts>
+        
       </div>
       <div>
         <CheckoutTotal>

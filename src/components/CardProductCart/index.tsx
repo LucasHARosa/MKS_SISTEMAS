@@ -1,5 +1,5 @@
 import { ProductProps } from "../../dto/ProductDTO";
-import { CardProductCartContainer, CardProductCartInfo, CloseButton, Price, ProductQuantity, ProductQuantityButtons } from "./styles";
+import { CardProductCartContainer, CardProductCartInfo, ProductCartQuantityContainer , CardProductPrice, CloseButton, ProductQuantity, ProductQuantityButtons} from "./styles";
 
 interface CardProductCartProps {
   product: ProductProps;
@@ -32,20 +32,19 @@ export function CardProductCart( {product, quantity, onRemoveCart, onDeleteCart,
         </p>
       </CardProductCartInfo>
       
-      <ProductQuantity>
-        <p>Qtd:</p>
-        <ProductQuantityButtons>
-          <button onClick={() => onRemoveCart(product)}>-</button>
-          <span>{quantity}</span>
-          <button onClick={() => onAddCart(product)}>+</button>
-        </ProductQuantityButtons>
-      </ProductQuantity>
-      <Price>
-        <h2>
-          R$ {(Number(product.price) * quantity ).toLocaleString('pt-BR')}
-        </h2>
-      </Price>
-      
+      <ProductCartQuantityContainer >
+        <ProductQuantity>
+          <p>Qtd:</p>
+          <ProductQuantityButtons>
+            <button onClick={() => onRemoveCart(product)}>-</button>
+            <span>{quantity}</span>
+            <button onClick={() => onAddCart(product)}>+</button>
+          </ProductQuantityButtons>
+        </ProductQuantity>
+        <CardProductPrice>
+          <h2>R${(Number(product.price) * quantity ).toLocaleString('pt-BR')}</h2>
+        </CardProductPrice>
+      </ProductCartQuantityContainer >
     </CardProductCartContainer>
   )
 }

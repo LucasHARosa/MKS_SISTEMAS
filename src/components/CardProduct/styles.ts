@@ -18,6 +18,32 @@ export const CardProductContainer = styled(motion.div)`
 
 `
 
+export const CardProductPrice = styled.div`
+  margin-top: 0.19rem;
+  height: 1.625rem;
+  padding: 0.25rem 0.37rem 0.25rem 0.44rem;
+  border-radius: 0.3125rem;
+  background: ${(props)=>props.theme["gray-800"]};
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media (max-width: 425px) {
+    height: 1.875rem;
+  }
+  
+  
+  h2{
+    color: ${(props)=>props.theme["white"]};
+    font-family: Montserrat;
+    font-size: 0.9375rem;
+    font-style: normal;
+    font-weight: 700;
+
+  }
+
+`
+
 export const CardProductImage = styled.div`
   width: 100%;
   display: flex;
@@ -69,32 +95,6 @@ export const CardProductPriceContainer = styled.div`
   }
 `
 
-export const CardProductPrice = styled.div`
-  margin-top: 0.19rem;
-  height: 1.625rem;
-  padding: 0.25rem 0.37rem 0.25rem 0.44rem;
-  border-radius: 0.3125rem;
-  background: ${(props)=>props.theme["gray-700"]};
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  @media (max-width: 425px) {
-    height: 1.875rem;
-  }
-  
-  
-  h2{
-    color: #FFF;
-    font-family: Montserrat;
-    font-size: 0.9375rem;
-    font-style: normal;
-    font-weight: 700;
-
-  }
-
-`
-
 export const CardProductDescription = styled.div`
   overflow: hidden;
   text-overflow: ellipsis;
@@ -139,3 +139,4 @@ export const CardProductButton = styled(motion.div)`
     
   }
 `
+

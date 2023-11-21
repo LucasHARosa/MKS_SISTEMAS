@@ -18,6 +18,10 @@ export const CheckoutContainer = styled(motion.div)`
   display: flex;
   justify-content: space-between;
   flex-direction: column;
+
+  @media (max-width: 768px) {
+    width: 20.625rem ;
+  }
 `;
 
 export const CheckoutHeader = styled.div`
@@ -27,20 +31,26 @@ export const CheckoutHeader = styled.div`
   flex-direction: row;
   align-items:flex-start;
   justify-content: space-between;
-  gap: 12.44rem;
+  
+  
+  @media (max-width: 768px) {
+    padding: 1.56rem 0.94rem 0 2rem;
+    
+  }
   
 
   h1{
+    width: 11.25rem;
     color: ${(props)=>props.theme['white']} ;
     font-family: Montserrat;
     font-size: 1.6875rem;
     font-style: normal;
     font-weight: 700;
-    line-height: normal;
+    
   }
   button{
-    width: 4rem;
-    height: 38px;
+    width:  2.375rem;
+    height:  2.375rem;
     border-radius: 999px;
     background: ${(props)=>props.theme['black']} ;
     border: none;
@@ -50,6 +60,9 @@ export const CheckoutHeader = styled.div`
     font-size: 1.75rem;
     font-style: normal;
     font-weight: 400;
+    @media (max-width: 768px) {
+      color: ${(props)=>props.theme['blue-300']} ;
+    }
   }
 `;
 
@@ -69,6 +82,10 @@ export const CheckoutTotal = styled.div`
   flex-direction: row;
   justify-content: space-between;
   margin-bottom: 2.62rem;
+
+  @media (max-width: 768px) {
+    padding: 0 2rem 0 2rem;
+  }
 
   h2{
     font-family: Montserrat;
@@ -97,6 +114,11 @@ export const CheckoutButton = styled.button`
   &:hover{
     background-color: ${(props)=>props.theme['gray-800']} ;
     transition: 0.2s;
+  }
+
+  @media(max-width: 768px){
+    font-size: 1.25rem;
+    height: 4.1165rem;
   }
 
 `

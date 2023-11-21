@@ -1,5 +1,5 @@
 import { ProductProps } from "../../dto/ProductDTO";
-import { CardProductButton, CardProductContainer, CardProductDescription, CardProductImage, CardProductInfo, CardProductPrice, CardProductPriceContainer } from "./styles";
+import { CardProductButton, CardProductContainer, CardProductDescription, CardProductImage, CardProductInfo,  CardProductPrice,  CardProductPriceContainer } from "./styles";
 import shoppingbag from "../../assets/shoppingbag.svg";
 import { motion } from "framer-motion";
 

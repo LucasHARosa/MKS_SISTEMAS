@@ -13,11 +13,22 @@ export const CardProductCartContainer = styled(motion.div)`
   align-items: center;
   justify-content: space-between;
   padding: 0 0.94rem 0 1.44rem;
+  @media (max-width: 768px) {
+    width: 15.625rem;
+    height: 13.75294rem;
+    box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.14);
+    flex-direction: column;
+    padding: 1.44rem 1.44rem 1.34rem 1rem;
+  }
   
 
   img{
     height: 3.812rem;
     width: 3.125rem;
+    @media (max-width: 768px) {
+      width: auto;
+      height: 6.3125rem;
+    }
   }
   p{
     
@@ -26,8 +37,11 @@ export const CardProductCartContainer = styled(motion.div)`
     font-style: normal;
     font-weight: 400;
     color: ${(props)=>props.theme['black']} ;
+    @media (max-width: 768px) {
+      font-size: 1rem;
+    }
+
   }
-  
 `
 
 export const CardProductCartInfo = styled.div`
@@ -36,8 +50,62 @@ export const CardProductCartInfo = styled.div`
   flex-direction: row;
   align-items: center;
   gap: 1rem;
+  @media (max-width: 768px) {
+    width: 100%;
+    flex-direction: column;
+    gap: 0.87rem;
+  }
 `;
 
+export const Price = styled(motion.div)`
+  width: 4.5rem;
+  h2{
+    font-family: Montserrat;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 700;
+    color: ${(props)=>props.theme['black']};
+  }
+`;
+
+export const CloseButton = styled(motion.button)`
+  position: absolute;
+  top: -9px;
+  right: -9px;
+  width: 1.2rem;
+  height: 1.2rem;
+  border-radius: 999px;
+  background: ${(props)=>props.theme['black']} ;
+  border: none;
+  cursor: pointer;
+  color: ${(props)=>props.theme['white']} ;
+  font-family: Montserrat;
+  font-size:  0.875rem;
+  font-style: normal;
+  font-weight: 400;
+  @media (max-width: 768px) {
+    top: 0.61rem;
+    right: 0.88rem;
+    background: transparent;
+    width: auto;
+    height: auto;
+    font-size: 2rem;
+    color: ${(props)=>props.theme['black']} ;
+  }
+  
+`;
+
+
+export const ProductCartQuantityContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  @media (max-width: 768px) {
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+`
 export const ProductQuantity = styled.div`
   width: 3.125rem;
   height: 1.1875rem;
@@ -53,7 +121,18 @@ export const ProductQuantity = styled.div`
     font-style: normal;
     font-weight: 400;
     color: ${(props)=>props.theme['black']} ;
+    @media (max-width: 768px) {
+      display: none;
+    }
   }
+  @media (max-width: 768px) {
+    width: 6.0855rem;
+    height: 2.15619rem;
+    align-items: center;
+    margin: 0;
+    justify-content: center;
+  }
+
 `;
 
 export const ProductQuantityButtons = styled.div`
@@ -78,6 +157,10 @@ export const ProductQuantityButtons = styled.div`
     font-weight: 400;
     border-left: 0.3px solid ${(props)=>props.theme['gray-400']};
     border-right: 0.3px solid ${(props)=>props.theme['gray-400']};
+    @media (max-width: 768px) {
+      font-size: 1.25rem;
+      width: 2rem;
+    }
   }
   button{
     padding: 0 0.25rem;
@@ -96,37 +179,39 @@ export const ProductQuantityButtons = styled.div`
       border: none;
       outline: none;
     }
+    @media (max-width: 768px) {
+      font-size: 1.5rem;
+      padding: 0 0.5rem;
+    }
   }
 `;
 
-export const Price = styled(motion.div)`
-  width: 4.5rem;
+export const CardProductPrice = styled.div`
+  margin-top: 0.19rem;
+  height: 1.625rem;
+  padding: 0.25rem 0.37rem 0.25rem 0.44rem;
+  border-radius: 0.3125rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media (max-width: 768px) {
+    height: 1.875rem;
+    background: ${(props)=>props.theme["gray-800"]};
+    margin:0;
+  }
+  
+  
   h2{
+    color: ${(props)=>props.theme["black"]};
     font-family: Montserrat;
-    font-size: 0.875rem;
+    font-size: 0.9375rem;
     font-style: normal;
     font-weight: 700;
-    color: ${(props)=>props.theme['black']};
+    @media (max-width: 768px) {
+      color: ${(props)=>props.theme["white"]};
+    }
+
   }
-`;
 
-export const CloseButton = styled(motion.button)`
-  position: absolute;
-  top: -9px;
-  right: -9px;
-  width: 18px;
-  height: 18px;
-  border-radius: 999px;
-  background: ${(props)=>props.theme['black']} ;
-  border: none;
-  cursor: pointer;
-  color: ${(props)=>props.theme['white']} ;
-  font-family: Montserrat;
-  font-size:  0.875rem;
-  font-style: normal;
-  font-weight: 400;
-  
-`;
-
-
-
+`
