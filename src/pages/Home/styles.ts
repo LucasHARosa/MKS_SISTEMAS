@@ -9,9 +9,20 @@ export const HomeContainer = styled.main`
 `
 
 export const HomeContent = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 7.25rem 15.96rem;
 
 `
 
 export const ListProducts = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 1.37rem;
+  flex-wrap: wrap;
+  
+  
 
 `

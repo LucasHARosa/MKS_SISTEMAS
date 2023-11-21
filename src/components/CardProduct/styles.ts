@@ -18,8 +18,8 @@ export const CardProductImage = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: 1.13rem;
-  padding-bottom: 0.88rem;
+  padding-top: 1.12rem;
+ 
 
   img{
     height: 8.625rem;
@@ -32,15 +32,14 @@ export const CardProductInfo = styled.div`
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
-  padding: 0 1.125rem;
-  p{
-    font-family: Montserrat;
-    font-size: 0.625rem;
-    font-style: normal;
-    font-weight: 300;
-    line-height: 0.75rem;
-  }
+  padding: 0 0.72rem 0 0.86rem;
   
+`
+
+export const CardProductDescription = styled.div`
+ 
+  overflow: hidden;
+  text-overflow: ellipsis;
 `
 
 export const CardProductPriceContainer = styled.div`
@@ -49,24 +48,28 @@ export const CardProductPriceContainer = styled.div`
   justify-content: space-between;
   align-items: flex-start;
   gap: 0.25rem;
+
+
   h1{
+    
     font-size: 1rem;
     color: ${(props)=>props.theme['black']} ;
     font-family: 'Montserrat';
     font-weight: 400;
-    line-height: 1.1875rem;
+    
   }
 `
 
 export const CardProductPrice = styled.div`
-  width: 4rem;
+  margin-top: 0.19rem;
   height: 1.625rem;
-  
+  padding: 0.25rem 0.37rem 0.25rem 0.44rem;
   border-radius: 0.3125rem;
   background: ${(props)=>props.theme["gray-700"]};
   display: flex;
   align-items: center;
   justify-content: center;
+  
   h2{
     
     color: #FFF;
@@ -87,7 +90,7 @@ export const CardProductButton = styled.div`
   
   button{
     width: 100%;
-    height: 100%;
+    height: 1.99419rem;
     background-color: ${(props)=>props.theme["blue-300"]};
     border: none;
     border-bottom-left-radius: 0.5rem;
@@ -96,10 +99,11 @@ export const CardProductButton = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 0.5rem;
-    font-size: 1rem;
+    gap: 0.88rem;
+    font-size: 0.875rem;
     color: ${(props)=>props.theme['white']} ;
     font-family: 'Montserrat';
-    font-weight: 700;
+    font-weight: 600;
+    
   }
 `

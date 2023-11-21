@@ -19,3 +19,8 @@ export interface queryProps{
   sortBy: "id"|"name"|"price";
   orderBy: "ASC"|"DESC";
 }
+
+export interface CartProductProps{
+  product: ProductProps;
+  quantity: number;
+}

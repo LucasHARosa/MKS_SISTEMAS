@@ -1,9 +1,13 @@
 import { ProductProps } from "../../dto/ProductDTO";
-import { CardProductButton, CardProductContainer, CardProductImage, CardProductInfo, CardProductPrice, CardProductPriceContainer } from "./styles";
+import { CardProductButton, CardProductContainer, CardProductDescription, CardProductImage, CardProductInfo, CardProductPrice, CardProductPriceContainer } from "./styles";
+import shoppingbag from "../../assets/shoppingbag.svg";
 
+interface CardProductProps {
+  product: ProductProps;
+  onAddCart: (product: ProductProps) => void;
+}
 
-
-export function CardProduct({product}:{product: ProductProps}) {
+export function CardProduct({ product, onAddCart }: CardProductProps) {
   return (
     <CardProductContainer>
       <CardProductImage>
@@ -16,10 +20,15 @@ export function CardProduct({product}:{product: ProductProps}) {
             <h2>R${product.price.split('.')[0]}</h2>
           </CardProductPrice>
         </CardProductPriceContainer>
-        <p>{product.description}</p>
+        <CardProductDescription>
+          <p>{product.description}</p>
+        </CardProductDescription>
       </CardProductInfo>
       <CardProductButton>
-        <button>COMPRAR</button>
+        <button onClick={()=>onAddCart(product)}>
+          <img src={shoppingbag} alt="shoppingbag" />
+          COMPRAR
+        </button>
       </CardProductButton>
     </CardProductContainer>
   )

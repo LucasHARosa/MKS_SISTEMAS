@@ -35,12 +35,12 @@ export const HeaderLogo = styled.div`
 
   }
   p{
-    padding: 0.313rem ;
+    
     font-size: 1.25rem;
     color: ${(props)=>props.theme['white']} ;
     font-family: 'Montserrat';
     font-weight: 300;
-
+    margin-bottom: 0.45rem;
   }
 `
 export const ButtonCart = styled.button`

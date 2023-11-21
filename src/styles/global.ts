@@ -20,4 +20,11 @@ export const GlobalStyle = createGlobalStyle`
     font-weight: 400;
     font-size: 1rem;
   }
+  p{
+    font-family: Montserrat;
+    font-size: 0.625rem;
+    font-style: normal;
+    font-weight: 300;
+    color: ${(props)=>props.theme['gray-800']} ;
+  }
 `
