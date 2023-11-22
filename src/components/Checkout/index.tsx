@@ -19,7 +19,9 @@ export function Checkout( {ListCart, onRemoveCart, onDeleteCart, onAddCart, isOp
     return total + (Number(item.product.price) * item.quantity);
   }, 0);
 
- 
+  function handlePortfolio(){
+    window.open('https://lucasharosa.github.io/', '_blank');
+  }
 
 
   return(
@@ -61,7 +63,7 @@ export function Checkout( {ListCart, onRemoveCart, onDeleteCart, onAddCart, isOp
           <h2>Total: </h2>
           <h2>R${totalCart.toLocaleString('pt-BR')}</h2>
         </CheckoutTotal>
-        <CheckoutButton>
+        <CheckoutButton onClick={handlePortfolio}>
           Finalizar compra
         </CheckoutButton>
       </div>

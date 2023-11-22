@@ -15,7 +15,7 @@ export function Home() {
 
   const [cart, setCart] = useState<Array<CartProductProps>>(Array(0));
   const [isCheckoutOpen, setCheckoutOpen] = useState(false);
-  const skeleton = Array(10).fill(0);
+  const skeleton = Array(8).fill(0);
   // const a = true;
   const query = {
     page: 1,
@@ -89,7 +89,7 @@ export function Home() {
       <HomeContent>
         { isLoading ? (
           <ListProducts>
-            {skeleton.map((item, index) => {
+            {skeleton.map((_item, index) => {
               return (
                 <div key={index}>
                   <Skeleton variant="rectangular" height={285} width={217.56172}  />

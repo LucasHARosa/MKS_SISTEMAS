@@ -99,10 +99,11 @@ export const CloseButton = styled(motion.button)`
 export const ProductCartQuantityContainer = styled.div`
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  flex:1;
   @media (max-width: 768px) {
     width: 100%;
     align-items: center;
-    justify-content: space-between;
   }
 
 `
